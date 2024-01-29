@@ -1,0 +1,23 @@
+{
+    "proyecto1": {
+        "nombre": "proyecto 1",
+        "img": "https://assets.justinmind.com/wp-content/webp-express/webp-images/uploads/2019/04/low-fidelity-wireframes-sketching-UI-kit.png.webp",
+        "descripcion": "hola",
+        "repo": "github",
+        "demo": "link"
+    },
+    "proyecto2": {
+        "nombre": "proyecto 2",
+        "img": "https://assets.justinmind.com/wp-content/webp-express/webp-images/uploads/2019/04/low-fidelity-wireframes-sketching-UI-kit.png.webp",
+        "descripcion": "hola",
+        "repo": "github",
+        "demo": "link"
+    },
+    "proyecto3": {
+        "nombre": "proyecto 3",
+        "img": "https://assets.justinmind.com/wp-content/webp-express/webp-images/uploads/2019/04/low-fidelity-wireframes-sketching-UI-kit.png.webp",
+        "descripcion": "hola",
+        "repo": "github",
+        "demo": "link"
+    }
+}
