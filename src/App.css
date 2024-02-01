@@ -1,6 +1,9 @@
 .App {
   text-align: center;
-  background-color: #131540;
+  /* background-color: #131540; */
+  background-image: url('./assets/images/gratisography-little-city-monster-free-stock-photo.jpg');
+  background-position: center center;
+  background-size: cover;
 }
 
 .App-logo {
