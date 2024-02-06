@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import './header.css';
 
@@ -24,15 +25,21 @@ const Header = () => {
                 <Box sx={{ flexGrow: 1 }} color="dark">
                     <AppBar position="static">
                         <Toolbar>
-                            <Typography variant="h6">PD</Typography>
-                            <ButtonGroup variant="text" aria-label="text button group" color="secondary">
-                                <Button>About me</Button>
-                                <Button>Proyects</Button>
-                                <Button>
-                                    {' '}
-                                    <ChatBubbleOutlineIcon /> Contact
-                                </Button>
-                            </ButtonGroup>
+                            <Grid container direction="row" justifyContent="flex-end" alignItems="flex-start">
+                                <Grid item sm={6}>
+                                    <Typography variant="h6">PD</Typography>
+                                </Grid>
+                                <Grid item sm={6}>
+                                    <ButtonGroup variant="text" aria-label="text button group" color="secondary">
+                                        <Button>About me</Button>
+                                        <Button>Proyects</Button>
+                                        <Button>
+                                            {' '}
+                                            <ChatBubbleOutlineIcon /> Contact
+                                        </Button>
+                                    </ButtonGroup>
+                                </Grid>
+                            </Grid>
                         </Toolbar>
                     </AppBar>
                 </Box>

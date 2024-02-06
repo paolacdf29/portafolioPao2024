@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
@@ -26,46 +26,35 @@ const ExpandMore = styled((props) => {
     })
 }));
 
-export default function ProjectCard() {
-    const [expanded, setExpanded] = React.useState(false);
+export default function ProjectCard({ project }) {
+    const [expanded, setExpanded] = useState(false);
+    const [iconsUrl, setIconsUrl] = useState('https://skillicons.dev/icons?i=');
 
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };
 
-    const iconsUrl = 'https://skillicons.dev/icons?i=';
-    const projectObj = {
-        nombre: 'Projecto 1',
-        img: 'https://assets.justinmind.com/wp-content/webp-express/webp-images/uploads/2019/04/low-fidelity-wireframes-sketching-UI-kit.png.webp',
-        descipcion: 'This impressive paella is a perfect party dish and a fun meal to cook together with your guests',
-        tecnologias: [
-            { name: 'Python', icon: iconsUrl + 'py' },
-            { name: 'Django', icon: iconsUrl + 'django' },
-            { name: 'React', icon: iconsUrl + 'react' }
-        ],
-        github: '',
-        url: ''
-    };
+    const { nombre, img, descipcion, tecnologias, github, url } = project;
 
     return (
         <Card sx={{ backgroundColor: 'rgba(255, 255, 255, 0.7)', borderRadius: '20px', padding: '2%' }}>
-            <CardHeader title={projectObj.nombre} subheader="September 14, 2016" />
-            <CardMedia component="img" height="194" image={projectObj.img} alt="Project mockup" />
+            <CardHeader title={nombre} subheader="September 14, 2016" />
+            <CardMedia component="img" height="194" image={img} alt="Project mockup" />
             <CardContent>
                 <Typography variant="body2" color="text.ligth">
-                    {projectObj.descipcion}
+                    {descipcion}
                 </Typography>
             </CardContent>
-            {projectObj.tecnologias.map((tech) => (
+            {tecnologias.map((tech) => (
                 // <Chip label={(tech.name, (<img src={tech.icon} alt="img" />))} />
-                <Chip avatar={<Avatar alt={tech.name} src={tech.icon} />} label={tech.name} variant="outlined" />
+                <Chip avatar={<Avatar alt={tech.name} src={iconsUrl + tech.icon} />} label={tech.name} variant="outlined" />
             ))}
             <CardActions disableSpacing>
                 <IconButton aria-label="go to code">
-                    <GitHubIcon />
+                    <GitHubIcon url={github} />
                 </IconButton>
                 <IconButton aria-label="go to site">
-                    <OpenInNewIcon url={projectObj.github} />
+                    <OpenInNewIcon url={url} />
                 </IconButton>
                 <IconButton onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
                     <ExpandMoreIcon />
