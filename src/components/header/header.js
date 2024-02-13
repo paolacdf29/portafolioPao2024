@@ -17,7 +17,17 @@ const darkTheme = createTheme({
         }
     }
 });
+
 const Header = () => {
+    const handleClick = (id) => {
+        console.log(id);
+        const element = document.getElementById(id);
+        console.log(element);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <>
             {' '}
@@ -27,12 +37,20 @@ const Header = () => {
                         <Toolbar>
                             <Grid container direction="row" justifyContent="flex-end" alignItems="flex-start">
                                 <Grid item sm={6}>
-                                    <Typography variant="h6">PD</Typography>
+                                    <Typography variant="h6">Paola Diaz</Typography>
                                 </Grid>
                                 <Grid item sm={6}>
                                     <ButtonGroup variant="text" aria-label="text button group" color="secondary">
+                                        <Button>Home</Button>
                                         <Button>About me</Button>
-                                        <Button>Proyects</Button>
+                                        <Button
+                                            onClick={() => {
+                                                handleClick('projects');
+                                            }}
+                                        >
+                                            Proyects
+                                        </Button>
+                                        <Button>Resume</Button>
                                         <Button>
                                             {' '}
                                             <ChatBubbleOutlineIcon /> Contact

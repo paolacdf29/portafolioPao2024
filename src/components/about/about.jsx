@@ -8,7 +8,7 @@ export const About = () => {
         <Grid item xs={12}>
             <Card sx={{ backgroundColor: 'rgba(255, 255, 255, 0.7)', borderRadius: '20px', padding: '5%' }} className="about">
                 <div>
-                    <h2 className="text-white">
+                    <h2>
                         <span className="cool-name">PAOLA DIAZ</span> Full-stack developer
                     </h2>
                     <p>

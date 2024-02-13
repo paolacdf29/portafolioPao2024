@@ -11,9 +11,9 @@ function App() {
     return (
         <Box sx={{ flexGrow: 1, pb: 10 }} className="App">
             <Header />
-            <Grid container spacing={5} sx={{ maxWidth: '85%', margin: '5%' }}>
+            <Grid container spacing={3} sx={{ maxWidth: '85%', margin: '5%' }}>
                 <About />
-                <Projects />
+                <Projects id="projects" />
                 <Certificados />
                 <Contacto />
             </Grid>
