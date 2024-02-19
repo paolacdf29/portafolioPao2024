@@ -41,8 +41,8 @@ const Header = () => {
                                 </Grid>
                                 <Grid item sm={6}>
                                     <ButtonGroup variant="text" aria-label="text button group" color="secondary">
-                                        <Button>Home</Button>
-                                        <Button>About me</Button>
+                                        <Button href="/">Home</Button>
+                                        <Button href="/aboutme">About me</Button>
                                         <Button
                                             onClick={() => {
                                                 handleClick('projects');

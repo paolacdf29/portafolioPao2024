@@ -8,13 +8,13 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 
 const buttons = [
     <IconButton sx={{ color: '#CDA37D' }} aria-label="add to shopping cart" size="large">
-        <GitHubIcon url="" />
+        <GitHubIcon url="" fontSize="large" />
     </IconButton>,
     <IconButton sx={{ color: '#CDA37D' }} aria-label="add to shopping cart" size="large">
-        <LinkedInIcon url="" />
+        <LinkedInIcon url="" fontSize="large" />
     </IconButton>,
-    <IconButton sx={{ color: '#CDA37D' }} aria-label="add to shopping cart" size="small">
-        <EmailIcon url="" />
+    <IconButton sx={{ color: '#CDA37D' }} aria-label="add to shopping cart" size="large">
+        <EmailIcon url="" fontSize="large" />
     </IconButton>
 ];
 const Contacto = () => {

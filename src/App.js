@@ -1,23 +1,23 @@
 import './App.css';
 import Header from './components/header/header';
-import { About } from './components/about/about';
-import { Certificados } from 'components/Certificado/Certificados';
-import Contacto from './components/contacto/contacto';
-import Projects from './components/projects/projects';
-import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/home';
+import AboutMe from './pages/aboutMe';
 
 function App() {
     return (
-        <Box sx={{ flexGrow: 1, pb: 10 }} className="App">
-            <Header />
-            <Grid container spacing={3} sx={{ maxWidth: '85%', margin: '5%' }}>
-                <About />
-                <Projects id="projects" />
-                <Certificados />
-                <Contacto />
-            </Grid>
-        </Box>
+        <Router>
+            <Box sx={{ flexGrow: 1, pb: 10 }} className="App">
+                <Header />
+                <div className="app-container">
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/aboutme" element={<AboutMe />} />
+                    </Routes>
+                </div>
+            </Box>
+        </Router>
     );
 }
 

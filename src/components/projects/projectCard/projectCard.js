@@ -37,7 +37,7 @@ export default function ProjectCard({ project }) {
     const { nombre, img, descipcion, tecnologias, github, url } = project;
 
     return (
-        <Card sx={{ backgroundColor: 'rgba(255, 255, 255, 0.7)', borderRadius: '20px', padding: '2%' }}>
+        <Card sx={{ width: '750px', backgroundColor: 'rgba(255, 255, 255, 0.7)', borderRadius: '20px', padding: '2%', marginTop: '8%' }}>
             <CardHeader title={nombre} subheader="September 14, 2016" />
             <CardMedia component="img" height="194" image={img} alt="Project mockup" />
             <CardContent>

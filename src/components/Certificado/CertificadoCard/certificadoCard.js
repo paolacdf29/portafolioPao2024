@@ -7,7 +7,9 @@ import PropTypes from 'prop-types';
 
 const CertificadoCard = ({ certification }) => {
     return (
-        <Card sx={{ maxWidth: 345, backgroundColor: 'rgba(255, 255, 255, 0.)', borderRadius: '20px' }}>
+        <Card
+            sx={{ maxWidth: 345, backgroundColor: 'rgba(255, 255, 255, 0.)', borderRadius: '20px', marginRight: '30px', marginTop: '8%' }}
+        >
             <CardActionArea>
                 <CardMedia component="img" height="140" image={certification.img} alt={certification.source} />
                 <CardContent>

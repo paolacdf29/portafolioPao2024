@@ -1,5 +1,6 @@
 import Grid from '@mui/material/Grid';
 import ProjectCard from './projectCard/projectCard';
+import './projects.css';
 
 const Projects = () => {
     const projectsObjs = [
@@ -57,11 +58,13 @@ const Projects = () => {
             <Grid item xs={12} sx={{ mt: 10, color: 'white' }}>
                 <h1>Projects</h1>
             </Grid>
-            {projectsObjs.map((project) => (
-                <Grid item xs={12} sm={12} md={6}>
-                    <ProjectCard project={project} />
-                </Grid>
-            ))}
+            <div className="project-card-container">
+                {projectsObjs.map((project) => (
+                    <Grid item xs={12} sm={12} md={6}>
+                        <ProjectCard project={project} />
+                    </Grid>
+                ))}
+            </div>
         </>
     );
 };
