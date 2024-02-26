@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import './header.css';
+import pdfFile from '../../assets/statics/ejemplo.pdf';
 
 const darkTheme = createTheme({
     palette: {
@@ -18,13 +19,24 @@ const darkTheme = createTheme({
     }
 });
 
-const Header = () => {
-    const handleClick = (id) => {
-        console.log(id);
-        const element = document.getElementById(id);
-        console.log(element);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+const Header = (props) => {
+    const scrollTo = (ref) => {
+        if (ref.current) {
+            ref.current.scrollIntoView();
+        }
+    };
+    const handleDownloadPDF = async () => {
+        try {
+            const response = await fetch(pdfFile);
+            const blob = await response.blob();
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'PaolaDiazCV.pdf';
+            a.click();
+            URL.revokeObjectURL(url);
+        } catch (error) {
+            console.error('Error downloading PDF:', error);
         }
     };
 
@@ -45,13 +57,23 @@ const Header = () => {
                                         <Button href="/aboutme">About me</Button>
                                         <Button
                                             onClick={() => {
-                                                handleClick('projects');
+                                                scrollTo(props.projectsRef);
                                             }}
                                         >
-                                            Proyects
+                                            Projects
                                         </Button>
-                                        <Button>Resume</Button>
-                                        <Button>
+                                        <Button
+                                            onClick={() => {
+                                                handleDownloadPDF();
+                                            }}
+                                        >
+                                            Resume
+                                        </Button>
+                                        <Button
+                                            onClick={() => {
+                                                scrollTo(props.contactRef);
+                                            }}
+                                        >
                                             {' '}
                                             <ChatBubbleOutlineIcon /> Contact
                                         </Button>

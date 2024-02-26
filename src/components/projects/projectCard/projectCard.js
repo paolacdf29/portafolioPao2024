@@ -34,10 +34,13 @@ export default function ProjectCard({ project }) {
         setExpanded(!expanded);
     };
 
-    const { nombre, img, descipcion, tecnologias, github, url } = project;
+    const { id, nombre, img, descipcion, tecnologias, github, url } = project;
 
     return (
-        <Card sx={{ width: '750px', backgroundColor: 'rgba(255, 255, 255, 0.7)', borderRadius: '20px', padding: '2%', marginTop: '8%' }}>
+        <Card
+            sx={{ width: '750px', backgroundColor: 'rgba(255, 255, 255, 0.7)', borderRadius: '20px', padding: '2%', marginTop: '8%' }}
+            key={id}
+        >
             <CardHeader title={nombre} subheader="September 14, 2016" />
             <CardMedia component="img" height="194" image={img} alt="Project mockup" />
             <CardContent>
@@ -47,7 +50,7 @@ export default function ProjectCard({ project }) {
             </CardContent>
             {tecnologias.map((tech) => (
                 // <Chip label={(tech.name, (<img src={tech.icon} alt="img" />))} />
-                <Chip avatar={<Avatar alt={tech.name} src={iconsUrl + tech.icon} />} label={tech.name} variant="outlined" />
+                <Chip avatar={<Avatar alt={tech.name} src={iconsUrl + tech.icon} />} label={tech.name} variant="outlined" key={tech.id} />
             ))}
             <CardActions disableSpacing>
                 <IconButton aria-label="go to code">
