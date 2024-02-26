@@ -1,0 +1,9 @@
+.header {
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos hacia la derecha */
+    align-items: center;
+    padding: 20px;
+}
+.iconos {
+    margin-right: 10px;
+}

@@ -1,5 +1,16 @@
 .App {
   text-align: center;
+  /* background-color: #131540; */
+  background-image: url('./assets/images/gratisography-little-city-monster-free-stock-photo.jpg');
+  background-position: center center;
+  background-size: cover;
+}
+
+.app-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5%;
 }
 
 .App-logo {
