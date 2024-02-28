@@ -4,6 +4,7 @@ import IconButton from '@mui/material/IconButton';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 
 import ButtonGroup from '@mui/material/ButtonGroup';
 
@@ -50,5 +51,10 @@ const Contacto = forwardRef((props, ref) => {
         </Grid>
     );
 });
+
+ProjectCard.propTypes = {
+    props: PropTypes.object.IsOptional,
+    ref: PropTypes.object.isRequired
+};
 
 export default Contacto;
