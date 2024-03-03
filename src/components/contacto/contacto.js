@@ -3,7 +3,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import IconButton from '@mui/material/IconButton';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
-import PropTypes from 'prop-types';
+import { forwardRef } from 'react';
 
 import ButtonGroup from '@mui/material/ButtonGroup';
 
@@ -39,10 +39,9 @@ const buttons = [
         <EmailIcon fontSize="large" />
     </IconButton>
 ];
-const Contacto = (props) => {
+const Contacto = forwardRef((props, ref) => {
     return (
-        // eslint-disable-next-line
-        <Grid item xs={12} sx={{ mt: 10 }} ref={props.contactRef}>
+        <Grid item xs={12} sx={{ mt: 10 }} ref={ref}>
             <h4 style={{ color: 'white' }}>Contact me!</h4>
             <p style={{ color: 'white' }}>Contact me through my social media accounts or my email:</p>
             <ButtonGroup aria-label="vertical contained button group" variant="text">
@@ -50,10 +49,6 @@ const Contacto = (props) => {
             </ButtonGroup>
         </Grid>
     );
-};
-
-Contacto.propTypes = {
-    props: PropTypes.object
-};
+});
 
 export default Contacto;
