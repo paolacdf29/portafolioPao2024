@@ -1,7 +1,7 @@
 import Grid from '@mui/material/Grid';
 import ProjectCard from './projectCard/projectCard';
 import { useEffect } from 'react';
-import { useProjects } from 'hooks/projectsHook';
+import { useProjects } from 'hooks/useProjects';
 import PropTypes from 'prop-types';
 import './projects.css';
 

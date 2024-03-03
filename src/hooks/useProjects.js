@@ -1,4 +1,3 @@
-// import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 import { getDatabase, ref, onValue, child, get } from 'firebase/database';
 import { firebaseApp } from './firebase';
 import { useState } from 'react';
