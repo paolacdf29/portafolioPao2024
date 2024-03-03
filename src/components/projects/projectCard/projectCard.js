@@ -50,7 +50,7 @@ export default function ProjectCard({ project, index }) {
                 </Typography>
             </CardContent>
             {techs.map((tech, index) => (
-                <Chip avatar={<Avatar alt={tech.name} src={iconsUrl + tech.icon} />} label={tech.name} variant="outlined" key={index} />
+                <Chip key={index} avatar={<Avatar alt={tech.name} src={iconsUrl + tech.icon} />} label={tech.name} />
             ))}
             <CardActions disableSpacing>
                 <IconButton aria-label="go to code" href={repositorio} target="_blank">
@@ -74,5 +74,5 @@ export default function ProjectCard({ project, index }) {
 
 ProjectCard.propTypes = {
     project: PropTypes.object.isRequired,
-    index: PropTypes.func.isRequired
+    index: PropTypes.number.isRequired
 };

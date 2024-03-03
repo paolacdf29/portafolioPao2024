@@ -89,8 +89,4 @@ const Header = (props) => {
     );
 };
 
-ProjectCard.propTypes = {
-    props: PropTypes.object.isRequired
-};
-
 export default Header;
