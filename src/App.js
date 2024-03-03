@@ -15,7 +15,7 @@ function App() {
                 <Header contactRef={contactRef} projectsRef={projectsRef} />
                 <div className="app-container">
                     <Routes>
-                        <Route path="/" element={<Home ref={projectsRef} contactRef={contactRef} />} />
+                        <Route path="/" element={<Home projectsRef={projectsRef} contactRef={contactRef} />} />
                         <Route path="/aboutme" element={<AboutMe />} />{' '}
                     </Routes>
                 </div>

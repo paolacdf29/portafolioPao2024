@@ -13,6 +13,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import Chip from '@mui/material/Chip';
 import Avatar from '@mui/material/Avatar';
+import PropTypes from 'prop-types';
 import './projectCard.css';
 
 const ExpandMore = styled((props) => {
@@ -26,38 +27,37 @@ const ExpandMore = styled((props) => {
     })
 }));
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, index }) {
     const [expanded, setExpanded] = useState(false);
     const [iconsUrl, setIconsUrl] = useState('https://skillicons.dev/icons?i=');
+    const { nombre, img, descipcion, description, tecnologias, repositorio, url } = project;
+    const techs = tecnologias ? tecnologias.filter((tech) => tech) : [];
 
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };
-
-    const { id, nombre, img, descipcion, tecnologias, github, url } = project;
-
     return (
         <Card
             sx={{ width: '750px', backgroundColor: 'rgba(255, 255, 255, 0.7)', borderRadius: '20px', padding: '2%', marginTop: '8%' }}
-            key={id}
+            key={index}
         >
-            <CardHeader title={nombre} subheader="September 14, 2016" />
-            <CardMedia component="img" height="194" image={img} alt="Project mockup" />
+            {/* <CardHeader title={nombre} subheader="September 14, 2016" /> */}
+            <CardHeader title={nombre} />
+            <CardMedia component="img" height="340" image={img} alt="Project mockup" />
             <CardContent>
                 <Typography variant="body2" color="text.ligth">
-                    {descipcion}
+                    {description}
                 </Typography>
             </CardContent>
-            {tecnologias.map((tech) => (
-                // <Chip label={(tech.name, (<img src={tech.icon} alt="img" />))} />
-                <Chip avatar={<Avatar alt={tech.name} src={iconsUrl + tech.icon} />} label={tech.name} variant="outlined" key={tech.id} />
+            {techs.map((tech, index) => (
+                <Chip key={index} avatar={<Avatar alt={tech.name} src={iconsUrl + tech.icon} />} label={tech.name} />
             ))}
             <CardActions disableSpacing>
-                <IconButton aria-label="go to code">
-                    <GitHubIcon url={github} />
+                <IconButton aria-label="go to code" href={repositorio} target="_blank">
+                    <GitHubIcon />
                 </IconButton>
-                <IconButton aria-label="go to site">
-                    <OpenInNewIcon url={url} />
+                <IconButton aria-label="go to site" href={url} target="_blank">
+                    <OpenInNewIcon />
                 </IconButton>
                 <IconButton onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
                     <ExpandMoreIcon />
@@ -65,9 +65,14 @@ export default function ProjectCard({ project }) {
             </CardActions>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
                 <CardContent>
-                    <Typography paragraph>Method:</Typography>
+                    <Typography paragraph>{descipcion}</Typography>
                 </CardContent>
             </Collapse>
         </Card>
     );
 }
+
+ProjectCard.propTypes = {
+    project: PropTypes.object.isRequired,
+    index: PropTypes.number.isRequired
+};

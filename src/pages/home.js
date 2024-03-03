@@ -4,15 +4,15 @@ import Contacto from '../components/contacto/contacto';
 import Projects from '../components/projects/projects';
 import { forwardRef } from 'react';
 
-const Home = forwardRef((props, ref) => {
+const Home = ({ contactRef, projectsRef }) => {
     return (
         <>
             <About />
-            <Projects ref={ref} />
+            <Projects projectsRef={projectsRef} />
             <Certificados />
-            <Contacto ref={props.contactRef} />
+            <Contacto contactRef={contactRef} />
         </>
     );
-});
+};
 
 export default Home;
