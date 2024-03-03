@@ -7,8 +7,9 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import './header.css';
 import pdfFile from '../../assets/statics/ejemplo.pdf';
+import PropTypes from 'prop-types';
+import './header.css';
 
 const darkTheme = createTheme({
     palette: {
